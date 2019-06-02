@@ -1,0 +1,26 @@
+import os
+import json
+file=open("server.conf","r+")
+data=json.load(file)
+#server on
+
+#for (root,dirs,files) in os.walk('apps'): 
+#	for name in dirs:
+#		print(name)
+        #print (root)
+  #      print (dirs)
+        #print (files)
+        #print ('--------------------------------')
+#for x in os.walk('.apps'):
+
+#	print(x[0])
+contextNames=os.listdir('apps')
+print(contextNames[0])
+for root,dirs,files in os.walk('./apps/'+contextNames[0]):
+	print("Directories ",dirs)
+	if dirs["private"]==true:
+		print("private he")
+	print("Files ",files)
+	for dir in dirs:
+		 if dir=='private':
+			 print("hello")
